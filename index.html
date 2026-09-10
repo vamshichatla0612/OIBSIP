@@ -1,2003 +1,724 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+  <!-- Primary SEO Meta Tags -->
+  <title>Chatla Vamshi | Creative Web Developer & Data Science Portfolio</title>
+  <meta name="title" content="Chatla Vamshi | Creative Web Developer & Data Science Portfolio">
+  <meta name="description"
+    content="Official personal portfolio of Chatla Vamshi - Computer Science Engineering student specializing in Data Science, Web Development, React, Python, and Creative Digital Experiences.">
+  <meta name="keywords"
+    content="Chatla Vamshi, Web Developer Portfolio, Data Science Intern, Computer Science Engineer, React, Python, HTML5, CSS3, JavaScript, OIBSIP">
+  <meta name="author" content="Chatla Vamshi">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <title>NOVA | Smart Productivity</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
+  <!-- FontAwesome Icons, Google Fonts & Three.js 3D Engine -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+  <!-- 3D Interactive Three.js WebGL Canvas Background -->
+  <canvas id="canvas-3d"></canvas>
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+  <!-- Ambient Light Orbs -->
+  <div class="bg-ambient">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
-<header class="navbar">
+  <!-- Header / Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-badge">CV</span>
+        <span class="logo-text">Chatla Vamshi</span>
+      </a>
 
-    <div class="nav-container">
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
 
-        <a href="#home" class="logo">
-
-            <div class="logo-icon">
-                N
-            </div>
-
-            NOVA
-
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode"
+          title="Toggle Light/Dark Theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="#" class="btn btn-download-nav open-resume-btn">
+          Download Resume <i class="fas fa-download"></i>
         </a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open Mobile Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-grid">
 
-        <nav class="nav-links">
+        <!-- Hero Left Content -->
+        <div class="hero-content" data-tilt-card>
+          <div class="hero-tag">
+            <span class="hero-tag-dash">—</span> HELLO, I'M
+          </div>
 
-            <a href="#home">
-                Home
+          <h1 class="hero-title">
+            Chatla Vamshi
+          </h1>
+
+          <div class="hero-subtitle-box">
+            <span class="hero-subtitle">Creative Developer</span>
+          </div>
+
+          <p class="hero-bio">
+            I am a passionate and fast-learning Computer Science Engineering student specializing in Data Science. I
+            enjoy creating modern websites, learning new technologies and turning creative ideas into practical digital
+            experiences.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary-gradient">
+              View My Projects <i class="fas fa-arrow-right"></i>
             </a>
-
-            <a href="#features">
-                Features
+            <a href="#contact" class="btn btn-secondary-pill">
+              Contact Me <i class="fas fa-paper-plane"></i>
             </a>
+          </div>
 
-            <a href="#about">
-                About
+          <div class="hero-social-strip">
+            <a href="https://github.com/vamshichatla0612" target="_blank" class="social-circle" title="GitHub">
+              <i class="fab fa-github"></i>
             </a>
-
-            <a href="#testimonials">
-                Testimonials
+            <a href="https://www.linkedin.com/in/vamshi-chatla-1478a5352/" target="_blank" class="social-circle" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
             </a>
-
-            <a href="#contact">
-                Contact
+            <a href="https://instagram.com" target="_blank" class="social-circle" title="Instagram">
+              <i class="fab fa-instagram"></i>
             </a>
-
-        </nav>
-
-
-        <div class="auth-buttons">
-
-            <a href="#login"
-                class="login-link">
-                Login
+            <a href="mailto:vamshichatla0612@gmail.com" class="social-circle" title="Email">
+              <i class="fas fa-envelope"></i>
             </a>
+          </div>
 
-            <a href="#signup"
-                class="nav-button">
-                Sign Up
-            </a>
+          <div class="hero-scroll-indicator">
+            <span>SCROLL DOWN</span>
+            <i class="fas fa-arrow-down scroll-arrow"></i>
+          </div>
+        </div>
+
+        <!-- Hero Right Avatar & Floating 3D Badges -->
+        <div class="hero-image-wrapper" data-tilt-card>
+
+          <!-- Outer Rounded Gradient Frame matching Reference Image -->
+          <div class="profile-glow-frame">
+            <div class="profile-inner-frame">
+              <img src="assets/images/profile.png" alt="Chatla Vamshi" class="profile-img">
+            </div>
+          </div>
+
+          <!-- Top Right Floating Badge: Creative Developer -->
+          <div class="float-badge float-badge-top-right glass-card-pill">
+            <div class="badge-icon-pill pink">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="badge-text-box">
+              <span class="badge-title">Creative Developer</span>
+              <span class="badge-sub">Building ideas into reality</span>
+            </div>
+          </div>
+
+          <!-- Bottom Left Floating Badge: Data Science -->
+          <div class="float-badge float-badge-bottom-left glass-card-pill">
+            <div class="badge-icon-pill pink">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="badge-text-box">
+              <span class="badge-title">Data Science</span>
+              <span class="badge-sub">Student & Learner</span>
+            </div>
+          </div>
+
+          <!-- Right Side Floating Code Snippet Card matching Reference Image -->
+          <div class="float-badge float-code-snippet glass-card-code">
+            <div class="code-line"><span class="code-kw">const</span> <span class="code-var">dream</span> = {</div>
+            <div class="code-prop">learn: <span class="code-val">true</span>,</div>
+            <div class="code-prop">build: <span class="code-val">true</span>,</div>
+            <div class="code-prop">grow: <span class="code-val">true</span></div>
+            <div class="code-line">};</div>
+          </div>
+
+          <!-- Floating 3D Dev Illustration Icon -->
+          <div class="float-dev-3d-graphic">
+            <i class="fab fa-react react-spin-3d"></i>
+          </div>
 
         </div>
 
+      </div>
     </div>
+  </section>
 
-</header>
+  <!-- About Me Section matching Reference Image -->
+  <section id="about" class="about">
+    <div class="container">
 
+      <div class="about-section-header">
+        <div class="hero-tag">
+          <span class="hero-tag-dash">—</span> ABOUT ME
+        </div>
+        <h2 class="about-main-title">Who I Am</h2>
+        <p class="about-sub-title">Get to know me and my journey.</p>
+      </div>
 
+      <div class="about-content-grid">
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+        <!-- Left: Story Paragraphs -->
+        <div class="about-left-story glass-card" data-tilt-card>
+         <p class="about-story-text" style="font-weight: 700;">
+  Hi, I’m Chatla Vamshi, a B.Tech Computer Science Engineering student specializing in Data Science. I’m a
+  passionate and fast learner interested in web development, data science, creative design, and digital
+  technologies.
+</p>
+          <p class="about-story-text" style="font-weight: 700;">
+            I’m currently focused on building real-world projects, gaining internship experience, and developing myself
+            into a skilled Web Developer and Data Science professional.
+            My goal: Learn. Build. Create. Grow. 🚀
+          </p>
 
-<section class="hero" id="home">
+          <div class="dev-feature-banner" style="margin-top: 1.5rem;">
+            <img src="assets/images/web_dev_3d.png" alt="3D Web Development Illustration" class="web-dev-3d-img">
+          </div>
+        </div>
 
-    <div class="hero-container">
+        <!-- Right: 4 Feature Cards Grid matching Reference Image -->
+        <div class="about-cards-4grid">
 
-
-        <div class="hero-content">
-
-            <div class="hero-badge">
-                ✨ SMARTER PRODUCTIVITY STARTS HERE
+          <!-- Card 1: Education -->
+          <div class="feature-card-pill glass-card" data-tilt-card>
+            <div class="card-pill-icon pink">
+              <i class="fas fa-graduation-cap"></i>
             </div>
+            <div class="card-pill-info">
+              <h4>Education</h4>
+              <p>B.Tech in Computer Science Engineering</p>
+            </div>
+          </div>
 
+          <!-- Card 2: My Goal -->
+          <div class="feature-card-pill glass-card" data-tilt-card>
+            <div class="card-pill-icon purple">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="card-pill-info">
+              <h4>My Goal</h4>
+              <p>Become a skilled developer & Data Scientist</p>
+            </div>
+          </div>
 
-            <h1>
-                Turn Your
-                <span>Ideas</span>
-                Into Reality.
-            </h1>
+          <!-- Card 3: Currently Learning -->
+          <div class="feature-card-pill glass-card" data-tilt-card>
+            <div class="card-pill-icon purple-light">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="card-pill-info">
+              <h4>Currently Learning</h4>
+              <p>Web Development<br>JavaScript & React</p>
+            </div>
+          </div>
 
+          <!-- Card 4: Passion -->
+          <div class="feature-card-pill glass-card" data-tilt-card>
+            <div class="card-pill-icon pink-peach">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="card-pill-info">
+              <h4>Passion</h4>
+              <p>Technology & Creativity<br>Building useful projects</p>
+            </div>
+          </div>
 
-            <p>
+        </div>
 
-                NOVA helps you organize your tasks,
-                manage projects, track goals and build
-                productive habits — all in one beautiful
-                workspace.
+      </div>
 
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="hero-tag">
+          <span class="hero-tag-dash">—</span> MY SKILLS
+        </div>
+        <h2 class="section-title">Technical & Creative Toolkit</h2>
+        <p class="section-desc">Technologies and tools I specialize in for web development and data science.</p>
+      </div>
+
+      <!-- Skills Category Filter -->
+      <div class="skills-filter">
+        <button class="filter-btn active" data-filter="all">All Skills</button>
+        <button class="filter-btn" data-filter="frontend">Frontend & Web</button>
+        <button class="filter-btn" data-filter="datascience">Data Science & Code</button>
+        <button class="filter-btn" data-filter="tools">Tools & Productivity</button>
+        <button class="filter-btn" data-filter="creative">Creative & Design</button>
+      </div>
+
+      <div class="skills-grid">
+        <!-- HTML5 -->
+        <div class="skill-card glass-card" data-category="frontend" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-html5 skill-icon" style="color:#e34f26"></i>
+              <span class="skill-name">HTML5</span>
+            </div>
+            <span class="skill-level-text">Advanced</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="92%"></div>
+          </div>
+        </div>
+
+        <!-- CSS3 -->
+        <div class="skill-card glass-card" data-category="frontend" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-css3-alt skill-icon" style="color:#1572b6"></i>
+              <span class="skill-name">CSS3</span>
+            </div>
+            <span class="skill-level-text">Advanced</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="90%"></div>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-card glass-card" data-category="frontend" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-js skill-icon" style="color:#f7df1e"></i>
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <span class="skill-level-text">Intermediate</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="85%"></div>
+          </div>
+        </div>
+
+        <!-- React -->
+        <div class="skill-card glass-card" data-category="frontend" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-react skill-icon" style="color:#61dafb"></i>
+              <span class="skill-name">React</span>
+            </div>
+            <span class="skill-level-text">Intermediate</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="78%"></div>
+          </div>
+        </div>
+
+        <!-- Python -->
+        <div class="skill-card glass-card" data-category="datascience" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-python skill-icon" style="color:#3776ab"></i>
+              <span class="skill-name">Python</span>
+            </div>
+            <span class="skill-level-text">Proficient</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="88%"></div>
+          </div>
+        </div>
+
+        <!-- Data Science -->
+        <div class="skill-card glass-card" data-category="datascience" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-chart-pie skill-icon" style="color:#8b5cf6"></i>
+              <span class="skill-name">Data Science</span>
+            </div>
+            <span class="skill-level-text">Specialization</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="82%"></div>
+          </div>
+        </div>
+
+        <!-- Git & GitHub -->
+        <div class="skill-card glass-card" data-category="tools" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-github skill-icon" style="color:#f05032"></i>
+              <span class="skill-name">Git & GitHub</span>
+            </div>
+            <span class="skill-level-text">Proficient</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="86%"></div>
+          </div>
+        </div>
+
+        <!-- MS Excel -->
+        <div class="skill-card glass-card" data-category="tools" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-file-excel skill-icon" style="color:#107c41"></i>
+              <span class="skill-name">MS Excel</span>
+            </div>
+            <span class="skill-level-text">Advanced</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="90%"></div>
+          </div>
+        </div>
+
+        <!-- Graphic Designing -->
+        <div class="skill-card glass-card" data-category="creative" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-paint-brush skill-icon" style="color:#ec4899"></i>
+              <span class="skill-name">Graphic Designing</span>
+            </div>
+            <span class="skill-level-text">Creative</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="84%"></div>
+          </div>
+        </div>
+
+        <!-- Video Editing -->
+        <div class="skill-card glass-card" data-category="creative" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-video skill-icon" style="color:#f97316"></i>
+              <span class="skill-name">Video Editing</span>
+            </div>
+            <span class="skill-level-text">Creative</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="80%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="hero-tag">
+          <span class="hero-tag-dash">—</span> PROJECTS
+        </div>
+        <h2 class="section-title">Featured Work & Academic Projects</h2>
+        <p class="section-desc">Explore projects highlighting web development, 3D interactive interfaces, and data
+          science.</p>
+      </div>
+
+      <!-- Projects Category Filter -->
+      <div class="skills-filter projects-filter">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="datascience">Data Science & Python</button>
+        <button class="filter-btn" data-filter="creative">Creative & Design</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card glass-card" data-category="web" data-tilt-card>
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-ecommerce.png" alt="Sales Analytics & E-Commerce Web App"
+              class="project-img">
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn view-project-btn" data-project="project-1" title="View Details"><i
+                  class="fas fa-eye"></i></a>
+              <a href="#" class="overlay-btn" title="GitHub Source Code"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">HTML5</span>
+              <span class="project-tag">CSS3</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+            <h3 class="project-title">Sales & E-Commerce Analytics App</h3>
+            <p class="project-desc">Feature-rich web application with product catalogs, real-time cart calculations, and
+              pastel analytics dashboards.</p>
+            <div class="project-footer">
+              <span class="project-link-text view-project-btn" data-project="project-1">
+                View Project Specs <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass-card" data-category="datascience" data-tilt-card>
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-datascience.png" alt="Data Science Predictive Dashboard"
+              class="project-img">
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn view-project-btn" data-project="project-2" title="View Details"><i
+                  class="fas fa-eye"></i></a>
+              <a href="#" class="overlay-btn" title="GitHub Source Code"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Data Science</span>
+              <span class="project-tag">MS Excel</span>
+            </div>
+            <h3 class="project-title">Data Science Predictive Insights</h3>
+            <p class="project-desc">Exploratory data analysis pipeline inspecting complex dataset trends, statistical
+              charts, and predictive modeling.</p>
+            <div class="project-footer">
+              <span class="project-link-text view-project-btn" data-project="project-2">
+                View Project Specs <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass-card" data-category="web" data-tilt-card>
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-task.png" alt="3D Web Development Interactive App" class="project-img">
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn view-project-btn" data-project="project-3" title="View Details"><i
+                  class="fas fa-eye"></i></a>
+              <a href="#" class="overlay-btn" title="GitHub Source Code"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Three.js</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">3D Animations</span>
+            </div>
+            <h3 class="project-title">3D Interactive Web Application</h3>
+            <p class="project-desc">Interactive 3D glassmorphic portfolio platform with WebGL dynamic particles and
+              real-time cursor tilt effects.</p>
+            <div class="project-footer">
+              <span class="project-link-text view-project-btn" data-project="project-3">
+                View Project Specs <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card glass-card" data-category="creative" data-tilt-card>
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-creative.png" alt="Creative Graphic & Video Editing Showcase"
+              class="project-img">
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn view-project-btn" data-project="project-4" title="View Details"><i
+                  class="fas fa-eye"></i></a>
+              <a href="#" class="overlay-btn" title="Portfolio Gallery"><i class="fas fa-image"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Graphic Design</span>
+              <span class="project-tag">Video Editing</span>
+              <span class="project-tag">UI Mockup</span>
+            </div>
+            <h3 class="project-title">Media & Graphic Studio Showcase</h3>
+            <p class="project-desc">A curated portfolio of vector artwork, brand identities, promotional banners, and
+              motion video edits.</p>
+            <div class="project-footer">
+              <span class="project-link-text view-project-btn" data-project="project-4">
+                View Project Specs <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Journey Section -->
+  <section id="education" class="education">
+    <div class="container">
+      <div class="section-header">
+        <div class="hero-tag">
+          <span class="hero-tag-dash">—</span> EDUCATION
+        </div>
+        <h2 class="section-title">Education & Milestones</h2>
+        <p class="section-desc">My academic background in Computer Science Engineering & Data Science.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Milestone 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card" data-tilt-card>
+            <span class="timeline-badge">2023 - Present (Undergraduate)</span>
+            <h3 class="timeline-title">B.Tech - Computer Science Engineering</h3>
+            <div class="timeline-subtitle">Specialization in Data Science</div>
+            <p class="timeline-desc">
+              Focusing on core Computer Science subjects including Algorithms, Data Structures, Database Systems, Web
+              Technologies, and Data Analytics.
             </p>
-
-
-            <div class="hero-buttons">
-
-                <a href="#dashboard"
-                    class="primary-button">
-
-                    Get Started Free →
-                    
-                </a>
-
-
-                <a href="#features"
-                    class="secondary-button">
-
-                    Explore Features ↓
-
-                </a>
-
-            </div>
-
-
-            <div class="hero-trust">
-
-                <span>
-                    ✓ Free to start
-                </span>
-
-                <span>
-                    ✓ Easy to use
-                </span>
-
-                <span>
-                    ✓ No credit card
-                </span>
-
-            </div>
-
+          </div>
         </div>
 
-
-
-        <!-- DASHBOARD PREVIEW -->
-
-        <div class="hero-visual">
-
-            <div class="floating-circle circle-one"></div>
-
-            <div class="floating-circle circle-two"></div>
-
-
-            <div class="dashboard-preview">
-
-
-                <div class="preview-header">
-
-                    <div>
-
-                        <span class="small-label">
-                            GOOD MORNING
-                        </span>
-
-                        <h3>
-                            Your Workspace
-                        </h3>
-
-                    </div>
-
-
-                    <div class="preview-avatar">
-                        V
-                    </div>
-
-                </div>
-
-
-
-                <div class="preview-stats">
-
-
-                    <div class="preview-stat purple">
-
-                        <span>
-                            📝
-                        </span>
-
-                        <div>
-
-                            <strong>
-                                12
-                            </strong>
-
-                            <small>
-                                Tasks
-                            </small>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="preview-stat green">
-
-                        <span>
-                            ✅
-                        </span>
-
-                        <div>
-
-                            <strong>
-                                8
-                            </strong>
-
-                            <small>
-                                Completed
-                            </small>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="preview-stat orange">
-
-                        <span>
-                            🎯
-                        </span>
-
-                        <div>
-
-                            <strong>
-                                5
-                            </strong>
-
-                            <small>
-                                Goals
-                            </small>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="preview-tasks">
-
-
-                    <div class="preview-task-title">
-
-                        <strong>
-                            Today's Tasks
-                        </strong>
-
-                        <span>
-                            8 / 12
-                        </span>
-
-                    </div>
-
-
-                    <div class="preview-task completed">
-
-                        <div class="task-check">
-                            ✓
-                        </div>
-
-                        Complete HTML Assignment
-
-                    </div>
-
-
-                    <div class="preview-task completed">
-
-                        <div class="task-check">
-                            ✓
-                        </div>
-
-                        Practice CSS
-
-                    </div>
-
-
-                    <div class="preview-task">
-
-                        <div class="task-check"></div>
-
-                        Build Landing Page
-
-                    </div>
-
-
-                    <div class="preview-task">
-
-                        <div class="task-check"></div>
-
-                        Upload Project to GitHub
-
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="preview-progress">
-
-                    <div class="progress-heading">
-
-                        <strong>
-                            Today's Progress
-                        </strong>
-
-                        <span>
-                            78%
-                        </span>
-
-                    </div>
-
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill"></div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FEATURES
-===================================================== -->
-
-<section class="features-section"
-    id="features">
-
-    <div class="section-container">
-
-
-        <div class="section-heading">
-
-            <span>
-                POWERFUL FEATURES
-            </span>
-
-            <h2>
-                Everything You Need
-                To Stay Productive
-            </h2>
-
-            <p>
-                NOVA brings your tasks, goals,
-                reminders and productivity tools
-                together in one simple workspace.
+        <!-- Milestone 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card" data-tilt-card>
+            <span class="timeline-badge">Web Development Internship</span>
+            <h3 class="timeline-title">Oasis Infobyte (OIBSIP) Internship</h3>
+            <div class="timeline-subtitle">Frontend Web Developer Intern</div>
+            <p class="timeline-desc">
+              Constructed modern responsive web projects, portfolio interfaces, and interactive web tools emphasizing
+              clean CSS styling, semantic HTML, and JavaScript.
             </p>
-
+          </div>
         </div>
 
-
-
-        <div class="features-grid">
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon purple-icon">
-                    📝
-                </div>
-
-                <h3>
-                    Task Management
-                </h3>
-
-                <p>
-                    Create, organize and manage
-                    your daily tasks with ease.
-                </p>
-
-                <a href="#dashboard">
-                    Learn More →
-                </a>
-
-            </div>
-
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon blue-icon">
-                    ⏰
-                </div>
-
-                <h3>
-                    Smart Reminders
-                </h3>
-
-                <p>
-                    Set reminders so you never
-                    forget an important task.
-                </p>
-
-                <a href="#alarms">
-                    Set Reminder →
-                </a>
-
-            </div>
-
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon pink-icon">
-                    🎯
-                </div>
-
-                <h3>
-                    Goal Tracking
-                </h3>
-
-                <p>
-                    Set personal goals and track
-                    your progress every day.
-                </p>
-
-                <a href="#goals">
-                    Track Goals →
-                </a>
-
-            </div>
-
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon orange-icon">
-                    📊
-                </div>
-
-                <h3>
-                    Progress Analytics
-                </h3>
-
-                <p>
-                    Understand your productivity
-                    and improve your habits.
-                </p>
-
-                <a href="#dashboard">
-                    View Progress →
-                </a>
-
-            </div>
-
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon green-icon">
-                    🔔
-                </div>
-
-                <h3>
-                    Notifications
-                </h3>
-
-                <p>
-                    Get browser notifications when
-                    it's time to complete your task.
-                </p>
-
-                <a href="#alarms">
-                    Enable Alerts →
-                </a>
-
-            </div>
-
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon violet-icon">
-                    🌙
-                </div>
-
-                <h3>
-                    Dark Mode
-                </h3>
-
-                <p>
-                    Work comfortably at night with
-                    a beautiful dark interface.
-                </p>
-
-                <a href="#dashboard">
-                    Try Dark Mode →
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section class="about-section"
-    id="about">
-
-    <div class="section-container">
-
-        <div class="about-grid">
-
-
-            <div class="about-visual">
-
-                <div class="about-card-main">
-
-                    <div class="about-icon">
-                        🚀
-                    </div>
-
-                    <h3>
-                        Work Smarter
-                    </h3>
-
-                    <p>
-                        Focus on what matters most.
-                    </p>
-
-
-                    <div class="about-mini-stats">
-
-                        <div>
-                            <strong>
-                                92%
-                            </strong>
-
-                            <small>
-                                Focus
-                            </small>
-                        </div>
-
-                        <div>
-                            <strong>
-                                85%
-                            </strong>
-
-                            <small>
-                                Goals
-                            </small>
-                        </div>
-
-                        <div>
-                            <strong>
-                                78%
-                            </strong>
-
-                            <small>
-                                Tasks
-                            </small>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="about-floating-card">
-
-                    <span>
-                        🔥
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            7 Day Streak
-                        </strong>
-
-                        <small>
-                            Keep going!
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="about-content">
-
-                <span class="section-tag">
-                    ABOUT NOVA
-                </span>
-
-                <h2>
-                    Your Personal
-                    <span>Productivity</span>
-                    Partner
-                </h2>
-
-                <p>
-                    NOVA is designed to help students,
-                    professionals and creators organize
-                    their everyday work.
-                </p>
-
-                <p>
-                    From simple tasks to long-term goals,
-                    NOVA gives you the tools to stay
-                    focused and consistent.
-                </p>
-
-
-                <div class="about-list">
-
-                    <div>
-                        <span>✓</span>
-                        Easy Task Management
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        Smart Reminders
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        Goal Tracking
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        Progress Tracking
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        Simple Interface
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        Mobile Friendly
-                    </div>
-
-                </div>
-
-
-                <a href="#dashboard"
-                    class="primary-button">
-
-                    Explore NOVA →
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     HOW IT WORKS
-===================================================== -->
-
-<section class="how-section">
-
-    <div class="section-container">
-
-
-        <div class="section-heading">
-
-            <span>
-                HOW IT WORKS
-            </span>
-
-            <h2>
-                Simple. Fast. Effective.
-            </h2>
-
-            <p>
-                Start organizing your life in
-                just three simple steps.
+        <!-- Milestone 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card" data-tilt-card>
+            <span class="timeline-badge">Skill Certifications</span>
+            <h3 class="timeline-title">Python, Data Science & Web Certifications</h3>
+            <div class="timeline-subtitle">Self-Driven Learning & Projects</div>
+            <p class="timeline-desc">
+              Completed hands-on courses in Python programming, exploratory data analysis, Git workflow, and frontend UI
+              design principles.
             </p>
-
+          </div>
         </div>
-
-
-
-        <div class="steps-grid">
-
-
-            <div class="step-card">
-
-                <span class="step-number">
-                    01
-                </span>
-
-                <div class="step-icon">
-                    👤
-                </div>
-
-                <h3>
-                    Create Your Account
-                </h3>
-
-                <p>
-                    Register for your free NOVA
-                    account and create your workspace.
-                </p>
-
-            </div>
-
-
-
-            <div class="step-card">
-
-                <span class="step-number">
-                    02
-                </span>
-
-                <div class="step-icon">
-                    📝
-                </div>
-
-                <h3>
-                    Add Your Tasks
-                </h3>
-
-                <p>
-                    Add your tasks, goals and
-                    important activities.
-                </p>
-
-            </div>
-
-
-
-            <div class="step-card">
-
-                <span class="step-number">
-                    03
-                </span>
-
-                <div class="step-icon">
-                    🚀
-                </div>
-
-                <h3>
-                    Get Things Done
-                </h3>
-
-                <p>
-                    Use reminders and progress
-                    tracking to stay consistent.
-                </p>
-
-            </div>
-
-
-        </div>
-
+      </div>
     </div>
+  </section>
 
-</section>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="hero-tag">
+          <span class="hero-tag-dash">—</span> CONTACT ME
+        </div>
+        <h2 class="section-title">Let's Connect & Build Together!</h2>
+        <p class="section-desc">Have a question, internship offer, or project idea? Feel free to reach out.</p>
+      </div>
 
-
-
-<!-- =====================================================
-     DASHBOARD
-===================================================== -->
-
-<section class="dashboard-page"
-    id="dashboard">
-
-    <div class="dashboard-container">
-
-
-        <div class="dashboard-header">
-
-            <div class="dashboard-title">
-
-                <h1>
-                    Productivity Dashboard
-                </h1>
-
-                <p>
-                    Welcome back! Let's make today productive.
-                </p>
-
+      <div class="contact-grid">
+        <div class="contact-info-cards">
+          <div class="contact-info-card glass-card" data-tilt-card>
+            <div class="info-icon"><i class="fas fa-user-graduate"></i></div>
+            <div class="info-details">
+              <h4>Full Name</h4>
+              <p>Chatla Vamshi</p>
             </div>
+          </div>
 
-
-            <div class="dashboard-actions">
-
-                <button
-                    class="secondary-button"
-                    onclick="toggleDarkMode()">
-
-                    🌙 Dark Mode
-
-                </button>
-
-                <button
-                    class="nav-button"
-                    onclick="logoutUser()">
-
-                    🚪 Logout
-
-                </button>
-
+          <div class="contact-info-card glass-card" data-tilt-card>
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="info-details">
+              <h4>Email Address</h4>
+              <p><a href="mailto:vamshichatla0612@gmail.com">vamshichatla0612@gmail.com</a></p>
             </div>
+          </div>
 
+          <div class="contact-info-card glass-card" data-tilt-card>
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="info-details">
+              <h4>Location</h4>
+              <p>Telangana, India</p>
+            </div>
+          </div>
         </div>
 
-
-
-        <!-- STATISTICS -->
-
-        <div class="dashboard-grid">
-
-
-            <div class="dashboard-card">
-
-                <div class="dashboard-card-icon">
-                    📝
-                </div>
-
-                <h3>
-                    12
-                </h3>
-
-                <p>
-                    Total Tasks
-                </p>
-
-            </div>
-
-
-            <div class="dashboard-card">
-
-                <div class="dashboard-card-icon">
-                    ✅
-                </div>
-
-                <h3>
-                    8
-                </h3>
-
-                <p>
-                    Completed
-                </p>
-
-            </div>
-
-
-            <div class="dashboard-card">
-
-                <div class="dashboard-card-icon">
-                    🎯
-                </div>
-
-                <h3>
-                    5
-                </h3>
-
-                <p>
-                    Active Goals
-                </p>
-
-            </div>
-
-
-            <div class="dashboard-card">
-
-                <div class="dashboard-card-icon">
-                    🔥
-                </div>
-
-                <h3>
-                    7
-                </h3>
-
-                <p>
-                    Current Streak
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- TASKS -->
-
-        <div class="task-section">
-
-            <div class="task-section-header">
-
-                <h2>
-                    📝 Today's Tasks
-                </h2>
-
-                <button
-                    class="add-task-btn"
-                    onclick="addDemoTask()">
-
-                    + Add Task
-
-                </button>
-
-            </div>
-
-
-            <div id="taskContainer">
-
-
-                <div class="task-item">
-
-                    <div class="task-item-check"></div>
-
-                    <div class="task-item-content">
-
-                        <h4>
-                            Complete HTML Assignment
-                        </h4>
-
-                        <p>
-                            Web Development
-                        </p>
-
-                    </div>
-
-                    <span class="task-priority high">
-                        High
-                    </span>
-
-                </div>
-
-
-
-                <div class="task-item">
-
-                    <div class="task-item-check"></div>
-
-                    <div class="task-item-content">
-
-                        <h4>
-                            Practice CSS
-                        </h4>
-
-                        <p>
-                            Learning
-                        </p>
-
-                    </div>
-
-                    <span class="task-priority medium">
-                        Medium
-                    </span>
-
-                </div>
-
-
-
-                <div class="task-item">
-
-                    <div class="task-item-check"></div>
-
-                    <div class="task-item-content">
-
-                        <h4>
-                            Upload Project to GitHub
-                        </h4>
-
-                        <p>
-                            OIBSIP Internship
-                        </p>
-
-                    </div>
-
-                    <span class="task-priority low">
-                        Low
-                    </span>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     TASK REMINDER / ALARM
-===================================================== -->
-
-<section class="alarm-section"
-    id="alarms">
-
-    <div class="section-heading">
-
-        <span>
-            ⏰ SMART REMINDERS
-        </span>
-
-        <h2>
-            Never Forget a Task
-        </h2>
-
-        <p>
-            Set a reminder and NOVA will notify
-            you when it's time to complete your task.
-        </p>
-
-    </div>
-
-
-
-    <div class="alarm-container">
-
-
-        <!-- FORM -->
-
-        <div class="alarm-form-card">
-
-            <h3>
-                ⏰ Set a Task Reminder
-            </h3>
-
-            <p class="alarm-description">
-                Choose what you need to do and
-                when you want to be reminded.
-            </p>
-
-
-            <form id="alarmForm">
-
-
-                <div class="form-group">
-
-                    <label for="taskName">
-                        📝 Task Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="taskName"
-                        placeholder="Example: Complete Python Assignment"
-                        required>
-
-                </div>
-
-
-
-                <div class="alarm-input-row">
-
-
-                    <div class="form-group">
-
-                        <label for="taskDate">
-                            📅 Date
-                        </label>
-
-                        <input
-                            type="date"
-                            id="taskDate"
-                            required>
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label for="taskTime">
-                            ⏰ Time
-                        </label>
-
-                        <input
-                            type="time"
-                            id="taskTime"
-                            required>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="form-group">
-
-                    <label for="reminderType">
-                        🔔 Reminder Type
-                    </label>
-
-                    <select id="reminderType">
-
-                        <option value="normal">
-                            🔔 Normal Reminder
-                        </option>
-
-                        <option value="important">
-                            🚨 Important Reminder
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-
-                <button
-                    type="submit"
-                    class="set-alarm-btn">
-
-                    🔔 Set Reminder
-
-                </button>
-
-
-            </form>
-
-        </div>
-
-
-
-        <!-- REMINDER LIST -->
-
-        <div class="alarm-list-card">
-
-
-            <div class="alarm-list-header">
-
-                <div>
-
-                    <h3>
-                        🔔 Your Reminders
-                    </h3>
-
-                    <p>
-                        Stay on top of your schedule.
-                    </p>
-
-                </div>
-
-
-                <span
-                    id="alarmCount"
-                    class="alarm-count">
-
-                    0
-
-                </span>
-
-            </div>
-
-
-
-            <div
-                id="alarmList"
-                class="alarm-list">
-
-
-                <div class="empty-alarm">
-
-                    <div class="empty-icon">
-                        ⏰
-                    </div>
-
-                    <h4>
-                        No reminders yet
-                    </h4>
-
-                    <p>
-                        Set your first reminder
-                        to stay productive.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     GOALS
-===================================================== -->
-
-<section class="how-section"
-    id="goals">
-
-    <div class="section-container">
-
-
-        <div class="section-heading">
-
-            <span>
-                🎯 YOUR GOALS
-            </span>
-
-            <h2>
-                Keep Moving Forward
-            </h2>
-
-            <p>
-                Track your goals and celebrate
-                every small achievement.
-            </p>
-
-        </div>
-
-
-
-        <div class="goals-grid">
-
-
-            <div class="goal-card">
-
-                <div class="goal-card-header">
-
-                    <h3>
-                        Learn HTML
-                    </h3>
-
-                    <span class="goal-icon">
-                        💻
-                    </span>
-
-                </div>
-
-
-                <p>
-                    Complete HTML fundamentals
-                </p>
-
-
-                <div class="goal-progress">
-
-                    <div
-                        class="goal-progress-fill"
-                        style="width: 90%;">
-                    </div>
-
-                </div>
-
-
-                <div class="goal-info">
-
-                    <span>
-                        Progress
-                    </span>
-
-                    <strong>
-                        90%
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="goal-card">
-
-                <div class="goal-card-header">
-
-                    <h3>
-                        Learn CSS
-                    </h3>
-
-                    <span class="goal-icon">
-                        🎨
-                    </span>
-
-                </div>
-
-
-                <p>
-                    Build responsive websites
-                </p>
-
-
-                <div class="goal-progress">
-
-                    <div
-                        class="goal-progress-fill"
-                        style="width: 65%;">
-                    </div>
-
-                </div>
-
-
-                <div class="goal-info">
-
-                    <span>
-                        Progress
-                    </span>
-
-                    <strong>
-                        65%
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="goal-card">
-
-                <div class="goal-card-header">
-
-                    <h3>
-                        Build Projects
-                    </h3>
-
-                    <span class="goal-icon">
-                        🚀
-                    </span>
-
-                </div>
-
-
-                <p>
-                    Create portfolio projects
-                </p>
-
-
-                <div class="goal-progress">
-
-                    <div
-                        class="goal-progress-fill"
-                        style="width: 45%;">
-                    </div>
-
-                </div>
-
-
-                <div class="goal-info">
-
-                    <span>
-                        Progress
-                    </span>
-
-                    <strong>
-                        45%
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     TESTIMONIALS
-===================================================== -->
-
-<section class="testimonials-section"
-    id="testimonials">
-
-    <div class="section-container">
-
-
-        <div class="section-heading">
-
-            <span>
-                ⭐ TESTIMONIALS
-            </span>
-
-            <h2>
-                Loved By Productive People
-            </h2>
-
-            <p>
-                See what people think about NOVA.
-            </p>
-
-        </div>
-
-
-
-        <div class="testimonial-grid">
-
-
-            <div class="testimonial-card">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    "NOVA makes it much easier for me
-                    to organize my college assignments
-                    and remember deadlines."
-                </p>
-
-
-                <div class="testimonial-user">
-
-                    <div class="user-icon">
-                        A
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Ananya
-                        </strong>
-
-                        <small>
-                            College Student
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="testimonial-card">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    "The reminder feature is my favorite.
-                    I don't forget important tasks anymore."
-                </p>
-
-
-                <div class="testimonial-user">
-
-                    <div class="user-icon">
-                        R
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Rahul
-                        </strong>
-
-                        <small>
-                            Developer
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="testimonial-card">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    "The dashboard is clean, colorful
-                    and really helps me stay focused."
-                </p>
-
-
-                <div class="testimonial-user">
-
-                    <div class="user-icon">
-                        S
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Sneha
-                        </strong>
-
-                        <small>
-                            Designer
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CTA
-===================================================== -->
-
-<section class="cta-section">
-
-    <div class="cta-container">
-
-        <div class="cta-content">
-
-            <span>
-                READY TO GET STARTED?
-            </span>
-
-            <h2>
-                Make Today More Productive.
-            </h2>
-
-            <p>
-                Start organizing your tasks,
-                goals and reminders with NOVA.
-            </p>
-
-            <a href="#alarms"
-                class="cta-button">
-
-                Start For Free →
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section class="contact-section"
-    id="contact">
-
-    <div class="section-container">
-
-
-        <div class="contact-grid">
-
-
-            <div>
-
-                <span class="section-tag">
-                    GET IN TOUCH
-                </span>
-
-                <h2>
-                    Have Questions?
-                </h2>
-
-                <p>
-                    We'd love to hear from you.
-                    Contact us through any of
-                    the options below.
-                </p>
-
-            </div>
-
-
-            <div class="contact-details">
-
-                <a href="mailto:hello@nova.com">
-                    📧 hello@nova.com
-                </a>
-
-                <a href="#">
-                    💼 LinkedIn
-                </a>
-
-                <a href="#">
-                    🐙 GitHub
-                </a>
-
-                <a href="#">
-                    📱 Instagram
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     LOGIN / SIGNUP
-===================================================== -->
-
-<section class="auth-section"
-    id="login">
-
-    <div class="auth-container">
-
-
-        <div class="auth-logo">
-            N NOVA
-        </div>
-
-
-        <h1>
-            Welcome Back
-        </h1>
-
-
-        <p class="auth-subtitle">
-            Login to continue to your workspace.
-        </p>
-
-
-        <form
-            onsubmit="loginUser(event)">
-
-
-            <div class="form-group">
-
-                <label>
-                    Email
-                </label>
-
-                <input
-                    type="email"
-                    placeholder="Enter your email"
-                    required>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Password
-                </label>
-
-                <input
-                    type="password"
-                    placeholder="Enter your password"
-                    required>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="auth-button">
-
-                Login
-
-            </button>
-
-
+        <!-- Contact Form -->
+        <form id="contact-form" class="contact-form glass-card" data-tilt-card>
+          <div class="form-group">
+            <label for="name"><i class="fas fa-user"></i> Your Name</label>
+            <input type="text" id="name" required placeholder="Enter your full name">
+          </div>
+
+          <div class="form-group">
+            <label for="email"><i class="fas fa-envelope"></i> Your Email</label>
+            <input type="email" id="email" required placeholder="Enter your email address">
+          </div>
+
+          <div class="form-group">
+            <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+            <input type="text" id="subject" required placeholder="Project / Internship Inquiry">
+          </div>
+
+          <div class="form-group">
+            <label for="message"><i class="fas fa-comment-dots"></i> Your Message</label>
+            <textarea id="message" rows="4" required placeholder="Write your message here..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary-gradient btn-full">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
         </form>
-
-
-        <div class="auth-footer">
-
-            Don't have an account?
-
-            <a href="#signup">
-                Sign Up
-            </a>
-
-        </div>
-
+      </div>
     </div>
+  </section>
 
-</section>
-
-
-
-<!-- =====================================================
-     SIGN UP
-===================================================== -->
-
-<section class="auth-section"
-    id="signup">
-
-    <div class="auth-container">
-
-
-        <div class="auth-logo">
-            N NOVA
-        </div>
-
-
-        <h1>
-            Create Account
-        </h1>
-
-
-        <p class="auth-subtitle">
-            Start your productivity journey today.
-        </p>
-
-
-        <form
-            onsubmit="registerUser(event)">
-
-
-            <div class="form-group">
-
-                <label>
-                    Full Name
-                </label>
-
-                <input
-                    type="text"
-                    placeholder="Enter your name"
-                    required>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Email
-                </label>
-
-                <input
-                    type="email"
-                    placeholder="Enter your email"
-                    required>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Password
-                </label>
-
-                <input
-                    type="password"
-                    placeholder="Create a password"
-                    required>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="auth-button">
-
-                Create Account
-
-            </button>
-
-
-        </form>
-
-
-        <div class="auth-footer">
-
-            Already have an account?
-
-            <a href="#login">
-                Login
-            </a>
-
-        </div>
-
-
+  <!-- Modal Popup for Resume & Projects -->
+  <div id="modal-backdrop" class="modal-backdrop">
+    <div class="modal-container glass-card">
+      <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+      <div id="modal-body-content"></div>
     </div>
+  </div>
 
-</section>
+  <!-- Back To Top Floating Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-socials">
+        <a href="https://github.com/vamshichatla0612" target="_blank" class="social-link" title="GitHub"><i
+            class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/vamshi-chatla-1478a5352/" target="_blank" class="social-link" title="LinkedIn"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:vamshichatla0612@gmail.com" class="social-link" title="Email"><i
+            class="fas fa-envelope"></i></a>
+      </div>
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="footer">
-
-    <div class="footer-container">
-
-
-        <div class="footer-brand">
-
-            <div class="logo">
-
-                <div class="logo-icon">
-                    N
-                </div>
-
-                NOVA
-
-            </div>
-
-
-            <p>
-                Your smart productivity workspace
-                for tasks, goals and reminders.
-            </p>
-
-
-            <div class="social-links">
-
-                <a href="#">
-                    f
-                </a>
-
-                <a href="#">
-                    in
-                </a>
-
-                <a href="#">
-                    ◎
-                </a>
-
-                <a href="#">
-                    ◇
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="footer-column">
-
-            <h4>
-                Product
-            </h4>
-
-            <a href="#features">
-                Features
-            </a>
-
-            <a href="#dashboard">
-                Dashboard
-            </a>
-
-            <a href="#alarms">
-                Reminders
-            </a>
-
-            <a href="#goals">
-                Goals
-            </a>
-
-        </div>
-
-
-
-        <div class="footer-column">
-
-            <h4>
-                Company
-            </h4>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#testimonials">
-                Testimonials
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </div>
-
-
-
-        <div class="footer-column">
-
-            <h4>
-                Account
-            </h4>
-
-            <a href="#login">
-                Login
-            </a>
-
-            <a href="#signup">
-                Register
-            </a>
-
-            <a href="#signup">
-                Sign Up
-            </a>
-
-        </div>
-
-
+      <p style="font-weight:700; margin-bottom:0.4rem; color:var(--text-primary);">Chatla Vamshi • Creative Developer
+        Portfolio</p>
+      <p style="color:var(--text-secondary); font-size:0.9rem">
+        “Learning. Building. Creating. Growing.”
+      </p>
+      <p style="color:var(--text-muted); font-size:0.8rem; margin-top:1rem">
+        &copy; 2026 Chatla Vamshi. All Rights Reserved.
+      </p>
     </div>
+  </footer>
 
-
-
-    <div class="footer-bottom">
-
-        <span>
-            © 2026 NOVA. All rights reserved.
-        </span>
-
-        <span>
-            Built with HTML, CSS & JavaScript.
-        </span>
-
-    </div>
-
-</footer>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script src="script.js"></script>
-
-
+  <!-- Main Interactive JavaScript & 3D Three.js Logic -->
+  <script src="script.js"></script>
 </body>
 
 </html>
