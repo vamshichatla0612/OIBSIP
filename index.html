@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TempConvert | Temperature Converter</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+
+        <div class="grid"></div>
+
+        <div class="glow glow-red"></div>
+        <div class="glow glow-cyan"></div>
+        <div class="glow glow-yellow"></div>
+
+        <span class="float red f1">+</span>
+        <span class="float yellow f2">−</span>
+        <span class="float cyan f3">×</span>
+        <span class="float red f4">÷</span>
+
+        <span class="float cyan f5">°C</span>
+        <span class="float yellow f6">°F</span>
+        <span class="float yellow f7">K</span>
+
+        <span class="float cyan f8">❄</span>
+        <span class="float red f9">🔥</span>
+        <span class="float cyan f10">🌡</span>
+
+        <div id="particles"></div>
+
+    </div>
+
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">🌡</span>
+
+            <span>
+                Temp<span class="logo-blue">Convert</span>
+            </span>
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="hero-title">
+
+                <span class="hero-icon">🌡</span>
+
+                <h1>
+                    Temperature
+                    <span>Converter</span>
+                </h1>
+
+            </div>
+
+            <p>
+                Convert temperatures instantly between Celsius,
+                Fahrenheit and Kelvin.
+            </p>
+
+        </section>
+
+
+        <!-- Main Workspace -->
+        <section class="workspace">
+
+
+            <!-- Converter Card -->
+            <div class="converter-card">
+
+                <!-- Temperature Input -->
+                <div class="field">
+
+                    <label>
+                        <span>▦</span>
+                        Enter Temperature
+                    </label>
+
+                    <div class="input-wrap">
+
+                        <input
+                            id="temperature"
+                            type="number"
+                            step="any"
+                            placeholder="Enter temperature..."
+                            autocomplete="off"
+                        >
+
+                        <span id="inputUnit">°C</span>
+
+                    </div>
+
+                    <small id="errorMessage"></small>
+
+                </div>
+
+
+                <!-- Unit -->
+                <div class="field">
+
+                    <label>
+                        <span>♨</span>
+                        Select Unit
+                    </label>
+
+                    <div class="select-wrap">
+
+                        <select id="unit">
+
+                            <option value="celsius">
+                                Celsius °C
+                            </option>
+
+                            <option value="fahrenheit">
+                                Fahrenheit °F
+                            </option>
+
+                            <option value="kelvin">
+                                Kelvin K
+                            </option>
+
+                        </select>
+
+                        <b>⌄</b>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Convert Button -->
+                <button
+                    id="convertBtn"
+                    class="convert-btn"
+                >
+
+                    <span>←</span>
+
+                    <strong>
+                        ↻ &nbsp; Convert Temperature
+                    </strong>
+
+                    <span>→</span>
+
+                </button>
+
+
+                <!-- Formula -->
+                <div class="formula-box">
+
+                    <div class="formula-title">
+                        ▦ &nbsp; Conversion Formula
+                    </div>
+
+                    <div id="formula">
+                        °F = (°C × 9/5) + 32
+                    </div>
+
+                </div>
+
+
+                <!-- Status -->
+                <div class="status">
+
+                    <i></i>
+
+                    <span id="statusText">
+                        Ready
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Gauge -->
+            <div class="gauge-card">
+
+                <div class="gauge">
+
+                    <div class="gauge-value">
+
+                        <span class="gauge-thermo">
+                            🌡
+                        </span>
+
+                        <strong id="gaugeValue">
+                            0.00
+                        </strong>
+
+                        <b id="gaugeUnit">
+                            °C
+                        </b>
+
+                        <em id="gaugeStatus">
+                            Ready
+                        </em>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Results -->
+        <section class="results">
+
+            <h2>
+                <span>▥</span>
+                Conversion Results
+            </h2>
+
+
+            <div class="result-grid">
+
+
+                <!-- Celsius -->
+                <article class="result-card celsius-card">
+
+                    <div class="result-symbol">
+                        °C
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Celsius
+                        </p>
+
+                        <strong id="celsiusResult">
+                            0.00
+                        </strong>
+
+                        <small>
+                            degrees Celsius
+                        </small>
+
+                    </div>
+
+                    <span>
+                        ❄
+                    </span>
+
+                </article>
+
+
+                <!-- Fahrenheit -->
+                <article class="result-card fahrenheit-card">
+
+                    <div class="result-symbol">
+                        °F
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Fahrenheit
+                        </p>
+
+                        <strong id="fahrenheitResult">
+                            32.00
+                        </strong>
+
+                        <small>
+                            degrees Fahrenheit
+                        </small>
+
+                    </div>
+
+                    <span>
+                        🔥
+                    </span>
+
+                </article>
+
+
+                <!-- Kelvin -->
+                <article class="result-card kelvin-card">
+
+                    <div class="result-symbol">
+                        K
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Kelvin
+                        </p>
+
+                        <strong id="kelvinResult">
+                            273.15
+                        </strong>
+
+                        <small>
+                            Kelvin
+                        </small>
+
+                    </div>
+
+                    <span>
+                        🌡
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Features -->
+        <section class="features">
+
+            <div>
+                <span>ϟ</span>
+                <b>Instant Conversion</b>
+            </div>
+
+            <div>
+                <span>♢</span>
+                <b>Input Validation</b>
+            </div>
+
+            <div>
+                <span>▣</span>
+                <b>Fully Responsive</b>
+            </div>
+
+            <div>
+                <span>✦</span>
+                <b>Animated UI</b>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        © 2026
+        <span>TempConvert</span>.
+        Built with HTML, CSS &amp; JavaScript.
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1368 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    color: white;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(255, 0, 80, 0.18),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 92% 20%,
+            rgba(0, 180, 255, 0.16),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255, 210, 0, 0.08),
+            transparent 35%
+        ),
+
+        #020711;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    z-index: -2;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+.grid {
+
+    position: absolute;
+
+    width: 180%;
+    height: 55%;
+
+    left: -40%;
+    bottom: -5%;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0, 220, 255, 0.14) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0, 220, 255, 0.14) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    transform:
+        perspective(500px)
+        rotateX(62deg);
+
+    box-shadow:
+        0 -40px 100px
+        rgba(0, 210, 255, 0.08);
+
+    animation:
+        gridMove 12s linear infinite;
+}
+
+
+@keyframes gridMove {
+
+    to {
+        background-position:
+            0 55px,
+            55px 0;
+    }
+
+}
+
+
+.glow {
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    filter: blur(110px);
+
+    opacity: 0.2;
+}
+
+
+.glow-red {
+
+    background: #ff1744;
+
+    left: -180px;
+    top: 5%;
+}
+
+
+.glow-cyan {
+
+    background: #00eaff;
+
+    right: -180px;
+    top: 20%;
+}
+
+
+.glow-yellow {
+
+    background: #ffe600;
+
+    left: 42%;
+    bottom: -230px;
+}
+
+
+/* Floating symbols */
+
+.float {
+
+    position: absolute;
+
+    font-weight: 800;
+
+    font-size: 44px;
+
+    text-shadow:
+        0 0 10px currentColor,
+        0 0 30px currentColor;
+
+    animation:
+        float 5s ease-in-out infinite;
+}
+
+
+.red {
+    color: #ff1744;
+}
+
+.cyan {
+    color: #00eaff;
+}
+
+.yellow {
+    color: #ffe600;
+}
+
+
+.f1 {
+    left: 5%;
+    top: 14%;
+}
+
+.f2 {
+    left: 11%;
+    top: 28%;
+}
+
+.f3 {
+    right: 7%;
+    top: 14%;
+}
+
+.f4 {
+    right: 5%;
+    top: 39%;
+}
+
+.f5 {
+    left: 6%;
+    top: 38%;
+}
+
+.f6 {
+    right: 12%;
+    top: 27%;
+}
+
+.f7 {
+    right: 14%;
+    bottom: 28%;
+}
+
+.f8 {
+    left: 10%;
+    bottom: 20%;
+}
+
+.f9 {
+    right: 8%;
+    bottom: 25%;
+}
+
+.f10 {
+    left: 11%;
+    bottom: 42%;
+}
+
+
+@keyframes float {
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(8deg);
+    }
+
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+#particles {
+
+    position: absolute;
+
+    inset: 0;
+}
+
+
+.particle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    animation:
+        particle linear infinite;
+}
+
+
+@keyframes particle {
+
+    from {
+        transform: translateY(105vh);
+        opacity: 0;
+    }
+
+    20%,
+    80% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-15vh);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+
+    width: min(1328px, 92%);
+
+    height: 66px;
+
+    margin: 0 auto;
+
+    padding: 0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        rgba(4, 10, 20, 0.72);
+
+    border:
+        1px solid
+        rgba(0, 220, 255, 0.25);
+
+    border-top: 0;
+
+    border-radius:
+        0 0 24px 24px;
+
+    backdrop-filter: blur(18px);
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 24px;
+
+    font-weight: 800;
+}
+
+
+.logo-icon {
+
+    font-size: 30px;
+
+    text-shadow:
+        0 0 15px #00eaff;
+}
+
+
+.logo-blue {
+
+    color: #00eaff;
+}
+
+
+.nav-text {
+
+    font-size: 13px;
+
+    color: #cbd5e1;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+
+    width: min(940px, 92%);
+
+    margin: auto;
+
+    padding:
+        28px 0 20px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+
+.hero-title {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.hero-icon {
+
+    font-size: 70px;
+
+    filter:
+        drop-shadow(
+            0 0 12px #ff1744
+        );
+}
+
+
+h1 {
+
+    font-size: 54px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+}
+
+
+h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3158,
+            #ffe600,
+            #00eaff
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.hero p {
+
+    font-size: 17px;
+
+    color: #d7deea;
+
+    margin-top: 12px;
+}
+
+
+/* =========================
+   WORKSPACE
+========================= */
+
+.workspace {
+
+    display: grid;
+
+    grid-template-columns:
+        560px 1fr;
+
+    gap: 24px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   CONVERTER CARD
+========================= */
+
+.converter-card {
+
+    position: relative;
+
+    padding:
+        27px 38px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 34, 58, 0.82),
+            rgba(4, 12, 27, 0.84)
+        );
+
+    border:
+        1px solid
+        rgba(0, 220, 255, 0.55);
+
+    box-shadow:
+
+        0 0 28px
+        rgba(0, 210, 255, 0.18),
+
+        0 0 55px
+        rgba(255, 180, 0, 0.12),
+
+        inset 0 0 25px
+        rgba(0, 220, 255, 0.04);
+}
+
+
+.converter-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -1px;
+
+    border-radius: 25px;
+
+    padding: 1px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #00eaff,
+            #ff1744,
+            #ffe600,
+            #00eaff
+        );
+
+    -webkit-mask:
+        linear-gradient(#000 0 0)
+        content-box,
+        linear-gradient(#000 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    opacity: 0.8;
+
+    pointer-events: none;
+}
+
+
+/* Fields */
+
+.field {
+
+    margin-bottom: 18px;
+}
+
+
+label {
+
+    display: block;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    margin-bottom: 9px;
+
+    color: #f1f5f9;
+}
+
+
+label span {
+
+    color: #00eaff;
+
+    margin-right: 8px;
+}
+
+
+.input-wrap,
+.select-wrap {
+
+    position: relative;
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    height: 51px;
+
+    border-radius: 14px;
+
+    border:
+        1px solid
+        #4a5870;
+
+    outline: none;
+
+    color: white;
+
+    background:
+        rgba(8, 24, 42, 0.82);
+
+    font-size: 16px;
+
+    padding:
+        0 70px 0 17px;
+
+    transition: 0.25s;
+}
+
+
+input::placeholder {
+
+    color: #94a3b8;
+}
+
+
+input:focus,
+select:focus {
+
+    border-color: #00eaff;
+
+    box-shadow:
+        0 0 18px
+        rgba(0, 234, 255, 0.16);
+}
+
+
+.input-wrap > span {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color: #00eaff;
+}
+
+
+select {
+
+    appearance: none;
+
+    cursor: pointer;
+
+    padding-right: 45px;
+}
+
+
+.select-wrap b {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color: white;
+
+    font-size: 24px;
+
+    pointer-events: none;
+}
+
+
+#errorMessage {
+
+    display: block;
+
+    min-height: 15px;
+
+    margin-top: 5px;
+
+    color: #ff5370;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   CONVERT BUTTON
+========================= */
+
+.convert-btn {
+
+    width: 100%;
+
+    height: 57px;
+
+    border: 0;
+
+    border-radius: 28px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff1744,
+            #ff2b3f,
+            #ffe600,
+            #00eaff
+        );
+
+    background-size: 220% 100%;
+
+    font-size: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 22px;
+
+    box-shadow:
+
+        0 0 25px
+        rgba(0, 220, 255, 0.24),
+
+        0 0 25px
+        rgba(255, 23, 68, 0.2);
+
+    animation:
+        buttonFlow 5s linear infinite;
+
+    transition: 0.25s;
+}
+
+
+.convert-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 35px
+        rgba(0, 234, 255, 0.35);
+}
+
+
+.convert-btn:active {
+
+    transform: scale(0.98);
+}
+
+
+@keyframes buttonFlow {
+
+    to {
+        background-position:
+            220% 0;
+    }
+
+}
+
+
+/* =========================
+   FORMULA
+========================= */
+
+.formula-box {
+
+    margin-top: 20px;
+
+    padding: 14px 18px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(0, 0, 0, 0.25);
+
+    border:
+        1px solid
+        rgba(0, 234, 255, 0.2);
+}
+
+
+.formula-title {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+
+#formula {
+
+    font-size: 16px;
+
+    color: #00eaff;
+
+    font-weight: 600;
+}
+
+
+/* Status */
+
+.status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 15px;
+
+    color: #dbe4ef;
+
+    font-size: 14px;
+}
+
+
+.status i {
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #1cff4a;
+
+    box-shadow:
+        0 0 12px #1cff4a;
+}
+
+
+/* =========================
+   GAUGE
+========================= */
+
+.gauge-card {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.gauge {
+
+    width: 310px;
+
+    height: 310px;
+
+    border-radius: 50%;
+
+    padding: 12px;
+
+    background:
+        conic-gradient(
+            from 210deg,
+            #ff1744 0deg,
+            #ff8c00 75deg,
+            #ffe600 125deg,
+            #00eaff 235deg,
+            #00eaff 275deg,
+            #152b43 275deg
+        );
+
+    box-shadow:
+
+        0 0 30px
+        rgba(0, 234, 255, 0.28),
+
+        0 0 50px
+        rgba(255, 23, 68, 0.14);
+
+    position: relative;
+}
+
+
+.gauge::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(4, 19, 35, 0.96);
+
+    border:
+        1px solid
+        rgba(0, 234, 255, 0.45);
+
+    box-shadow:
+        inset 0 0 30px
+        rgba(0, 234, 255, 0.15);
+}
+
+
+.gauge-value {
+
+    position: absolute;
+
+    inset: 38px;
+
+    border-radius: 50%;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(13, 46, 73, 0.8),
+            rgba(3, 14, 28, 0.95)
+        );
+}
+
+
+.gauge-thermo {
+
+    font-size: 40px;
+
+    filter:
+        drop-shadow(
+            0 0 8px #00eaff
+        );
+}
+
+
+.gauge-value strong {
+
+    font-size: 48px;
+
+    line-height: 1;
+
+    margin-top: 2px;
+}
+
+
+.gauge-value b {
+
+    font-size: 18px;
+
+    color: #00eaff;
+
+    margin-top: 5px;
+}
+
+
+.gauge-value em {
+
+    font-style: normal;
+
+    background:
+        rgba(0, 234, 255, 0.12);
+
+    padding:
+        7px 22px;
+
+    border-radius: 20px;
+
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    color: #e6faff;
+}
+
+
+/* =========================
+   RESULTS
+========================= */
+
+.results {
+
+    margin-top: 25px;
+
+    padding:
+        18px 25px 17px;
+
+    border-radius: 24px;
+
+    background:
+        rgba(6, 20, 35, 0.78);
+
+    border:
+        1px solid
+        rgba(0, 234, 255, 0.25);
+
+    box-shadow:
+        0 15px 45px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+.results h2 {
+
+    font-size: 20px;
+
+    margin-bottom: 14px;
+}
+
+
+.results h2 span {
+
+    color: #ff5370;
+
+    margin-right: 8px;
+}
+
+
+.result-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.result-card {
+
+    min-height: 100px;
+
+    border-radius: 18px;
+
+    padding: 16px;
+
+    display: grid;
+
+    grid-template-columns:
+        55px 1fr 35px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background:
+        rgba(10, 25, 42, 0.75);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+}
+
+
+.celsius-card {
+
+    border-color:
+        rgba(255, 23, 68, 0.55);
+}
+
+
+.fahrenheit-card {
+
+    border-color:
+        rgba(255, 230, 0, 0.55);
+}
+
+
+.kelvin-card {
+
+    border-color:
+        rgba(0, 234, 255, 0.55);
+}
+
+
+.result-symbol {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    font-weight: 800;
+
+    font-size: 17px;
+}
+
+
+.celsius-card .result-symbol {
+
+    border:
+        2px solid #ff1744;
+
+    color: #ff1744;
+
+    box-shadow:
+        0 0 15px
+        rgba(255, 23, 68, 0.25);
+}
+
+
+.fahrenheit-card .result-symbol {
+
+    border:
+        2px solid #ffe600;
+
+    color: #ffe600;
+
+    box-shadow:
+        0 0 15px
+        rgba(255, 230, 0, 0.25);
+}
+
+
+.kelvin-card .result-symbol {
+
+    border:
+        2px solid #00eaff;
+
+    color: #00eaff;
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 234, 255, 0.25);
+}
+
+
+.result-card p {
+
+    font-size: 14px;
+
+    color: #d9e1ec;
+}
+
+
+.result-card strong {
+
+    display: block;
+
+    font-size: 24px;
+
+    margin: 2px 0;
+}
+
+
+.result-card small {
+
+    font-size: 10px;
+
+    color: #9aa8ba;
+}
+
+
+.result-card > span {
+
+    font-size: 24px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+
+.features div {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #e2e8f0;
+
+    font-size: 12px;
+}
+
+
+.features span {
+
+    font-size: 21px;
+
+    color: #00eaff;
+
+    text-shadow:
+        0 0 12px #00eaff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 16px;
+
+    color: #718096;
+
+    font-size: 12px;
+}
+
+
+footer span {
+
+    color: #00eaff;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .workspace {
+
+        grid-template-columns: 1fr;
+    }
+
+    .gauge {
+
+        width: 250px;
+        height: 250px;
+    }
+
+    .container {
+
+        width: min(650px, 92%);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+
+        height: 58px;
+
+        padding: 0 16px;
+    }
+
+    .nav-text {
+
+        display: none;
+    }
+
+    .logo {
+
+        font-size: 19px;
+    }
+
+    .hero-title {
+
+        gap: 10px;
+    }
+
+    .hero-icon {
+
+        font-size: 45px;
+    }
+
+    h1 {
+
+        font-size: 38px;
+    }
+
+    .hero p {
+
+        font-size: 14px;
+    }
+
+    .converter-card {
+
+        padding: 22px;
+    }
+
+    .result-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .float {
+
+        font-size: 30px;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    h1 {
+
+        font-size: 32px;
+    }
+
+    .hero-title {
+
+        align-items: flex-start;
+    }
+
+    .hero-icon {
+
+        font-size: 35px;
+    }
+
+    .features {
+
+        grid-template-columns: 1fr;
+    }
+
+    .gauge {
+
+        width: 220px;
+        height: 220px;
+    }
+
+    .gauge-value strong {
+
+        font-size: 38px;
+    }
+
+}
