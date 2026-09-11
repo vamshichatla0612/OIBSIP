@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Chatla Vamshi | Creative Web Developer & Data Science Portfolio</title>
+  <meta name="title" content="Chatla Vamshi | Creative Web Developer & Data Science Portfolio">
+  <meta name="description"
+    content="Official personal portfolio of Chatla Vamshi - Computer Science Engineering student specializing in Data Science, Web Development, React, Python, and Creative Digital Experiences.">
+  <meta name="keywords"
+    content="Chatla Vamshi, Web Developer Portfolio, Data Science Intern, Computer Science Engineer, React, Python, HTML5, CSS3, JavaScript, OIBSIP">
+  <meta name="author" content="Chatla Vamshi">
+
+  <!-- FontAwesome Icons, Google Fonts & Three.js 3D Engine -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 3D Interactive Three.js WebGL Canvas Background -->
+  <canvas id="canvas-3d"></canvas>
+
+  <!-- Ambient Light Orbs -->
+  <div class="bg-ambient">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-badge">CV</span>
+        <span class="logo-text">Chatla Vamshi</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode"
+          title="Toggle Light/Dark Theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="#" class="btn btn-download-nav open-resume-btn">
+          Download Resume <i class="fas fa-download"></i>
+        </a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open Mobile Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Hero Left Content -->
+        <div class="hero-content" data-tilt-card>
+          <div class="hero-tag">
+            <span class="hero-tag-dash">—</span> HELLO, I'M
+          </div>
+
+          <h1 class="hero-title">
+            Chatla Vamshi
+          </h1>
+
+          <div class="hero-subtitle-box">
+            <span class="hero-subtitle">Creative Developer</span>
+          </div>
+
+          <p class="hero-bio">
+            I am a passionate and fast-learning Computer Science Engineering student specializing in Data Science. I
+            enjoy creating modern websites, learning new technologies and turning creative ideas into practical digital
+            experiences.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary-gradient">
+              View My Projects <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary-pill">
+              Contact Me <i class="fas fa-paper-plane"></i>
+            </a>
+          </div>
+
+          <div class="hero-social-strip">
+            <a href="https://github.com/vamshichatla0612" target="_blank" class="social-circle" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/vamshi-chatla-1478a5352/" target="_blank" class="social-circle" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-circle" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:vamshichatla0612@gmail.com" class="social-circle" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+
+          <div class="hero-scroll-indicator">
+            <span>SCROLL DOWN</span>
+            <i class="fas fa-arrow-down scroll-arrow"></i>
+          </div>
+        </div>
+
+        <!-- Hero Right Avatar & Floating 3D Badges -->
+        <div class="hero-image-wrapper" data-tilt-card>
+
+          <!-- Outer Rounded Gradient Frame matching Reference Image -->
+          <div class="profile-glow-frame">
+            <div class="profile-inner-frame">
+              <img src="assets/images/profile.png" alt="Chatla Vamshi" class="profile-img">
+            </div>
+          </div>
+
+          <!-- Top Right Floating Badge: Creative Developer -->
+          <div class="float-badge float-badge-top-right glass-card-pill">
+            <div class="badge-icon-pill pink">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="badge-text-box">
+              <span class="badge-title">Creative Developer</span>
+              <span class="badge-sub">Building ideas into reality</span>
+            </div>
+          </div>
+
+          <!-- Bottom Left Floating Badge: Data Science -->
+          <div class="float-badge float-badge-bottom-left glass-card-pill">
+            <div class="badge-icon-pill pink">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="badge-text-box">
+              <span class="badge-title">Data Science</span>
+              <span class="badge-sub">Student & Learner</span>
+            </div>
+          </div>
+
+          <!-- Right Side Floating Code Snippet Card matching Reference Image -->
+          <div class="float-badge float-code-snippet glass-card-code">
+            <div class="code-line"><span class="code-kw">const</span> <span class="code-var">dream</span> = {</div>
+            <div class="code-prop">learn: <span class="code-val">true</span>,</div>
+            <div class="code-prop">build: <span class="code-val">true</span>,</div>
+            <div class="code-prop">grow: <span class="code-val">true</span></div>
+            <div class="code-line">};</div>
+          </div>
+
+          <!-- Floating 3D Dev Illustration Icon -->
+          <div class="float-dev-3d-graphic">
+            <i class="fab fa-react react-spin-3d"></i>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section matching Reference Image -->
+  <section id="about" class="about">
+    <div class="container">
+
+      <div class="about-section-header">
+        <div class="hero-tag">
+          <span class="hero-tag-dash">—</span> ABOUT ME
+        </div>
+        <h2 class="about-main-title">Who I Am</h2>
+        <p class="about-sub-title">Get to know me and my journey.</p>
+      </div>
+
+      <div class="about-content-grid">
+
+        <!-- Left: Story Paragraphs -->
+        <div class="about-left-story glass-card" data-tilt-card>
+         <p class="about-story-text" style="font-weight: 700;">
+  Hi, I’m Chatla Vamshi, a B.Tech Computer Science Engineering student specializing in Data Science. I’m a
+  passionate and fast learner interested in web development, data science, creative design, and digital
+  technologies.
+</p>
+          <p class="about-story-text" style="font-weight: 700;">
+            I’m currently focused on building real-world projects, gaining internship experience, and developing myself
+            into a skilled Web Developer and Data Science professional.
+            My goal: Learn. Build. Create. Grow. 🚀
+          </p>
+
+          <div class="dev-feature-banner" style="margin-top: 1.5rem;">
+            <img src="assets/images/web_dev_3d.png" alt="3D Web Development Illustration" class="web-dev-3d-img">
+          </div>
+        </div>
+
+        <!-- Right: 4 Feature Cards Grid matching Reference Image -->
+        <div class="about-cards-4grid">
+
+          <!-- Card 1: Education -->
+          <div class="feature-card-pill glass-card" data-tilt-card>
+            <div class="card-pill-icon pink">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="card-pill-info">
+              <h4>Education</h4>
+              <p>B.Tech in Computer Science Engineering</p>
+            </div>
+          </div>
+
+          <!-- Card 2: My Goal -->
+          <div class="feature-card-pill glass-card" data-tilt-card>
+            <div class="card-pill-icon purple">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="card-pill-info">
+              <h4>My Goal</h4>
+              <p>Become a skilled developer & Data Scientist</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Currently Learning -->
+          <div class="feature-card-pill glass-card" data-tilt-card>
+            <div class="card-pill-icon purple-light">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="card-pill-info">
+              <h4>Currently Learning</h4>
+              <p>Web Development<br>JavaScript & React</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Passion -->
+          <div class="feature-card-pill glass-card" data-tilt-card>
+            <div class="card-pill-icon pink-peach">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="card-pill-info">
+              <h4>Passion</h4>
+              <p>Technology & Creativity<br>Building useful projects</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="hero-tag">
+          <span class="hero-tag-dash">—</span> MY SKILLS
+        </div>
+        <h2 class="section-title">Technical & Creative Toolkit</h2>
+        <p class="section-desc">Technologies and tools I specialize in for web development and data science.</p>
+      </div>
+
+      <!-- Skills Category Filter -->
+      <div class="skills-filter">
+        <button class="filter-btn active" data-filter="all">All Skills</button>
+        <button class="filter-btn" data-filter="frontend">Frontend & Web</button>
+        <button class="filter-btn" data-filter="datascience">Data Science & Code</button>
+        <button class="filter-btn" data-filter="tools">Tools & Productivity</button>
+        <button class="filter-btn" data-filter="creative">Creative & Design</button>
+      </div>
+
+      <div class="skills-grid">
+        <!-- HTML5 -->
+        <div class="skill-card glass-card" data-category="frontend" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-html5 skill-icon" style="color:#e34f26"></i>
+              <span class="skill-name">HTML5</span>
+            </div>
+            <span class="skill-level-text">Advanced</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="92%"></div>
+          </div>
+        </div>
+
+        <!-- CSS3 -->
+        <div class="skill-card glass-card" data-category="frontend" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-css3-alt skill-icon" style="color:#1572b6"></i>
+              <span class="skill-name">CSS3</span>
+            </div>
+            <span class="skill-level-text">Advanced</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="90%"></div>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-card glass-card" data-category="frontend" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-js skill-icon" style="color:#f7df1e"></i>
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <span class="skill-level-text">Intermediate</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="85%"></div>
+          </div>
+        </div>
+
+        <!-- React -->
+        <div class="skill-card glass-card" data-category="frontend" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-react skill-icon" style="color:#61dafb"></i>
+              <span class="skill-name">React</span>
+            </div>
+            <span class="skill-level-text">Intermediate</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="78%"></div>
+          </div>
+        </div>
+
+        <!-- Python -->
+        <div class="skill-card glass-card" data-category="datascience" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-python skill-icon" style="color:#3776ab"></i>
+              <span class="skill-name">Python</span>
+            </div>
+            <span class="skill-level-text">Proficient</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="88%"></div>
+          </div>
+        </div>
+
+        <!-- Data Science -->
+        <div class="skill-card glass-card" data-category="datascience" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-chart-pie skill-icon" style="color:#8b5cf6"></i>
+              <span class="skill-name">Data Science</span>
+            </div>
+            <span class="skill-level-text">Specialization</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="82%"></div>
+          </div>
+        </div>
+
+        <!-- Git & GitHub -->
+        <div class="skill-card glass-card" data-category="tools" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-github skill-icon" style="color:#f05032"></i>
+              <span class="skill-name">Git & GitHub</span>
+            </div>
+            <span class="skill-level-text">Proficient</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="86%"></div>
+          </div>
+        </div>
+
+        <!-- MS Excel -->
+        <div class="skill-card glass-card" data-category="tools" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-file-excel skill-icon" style="color:#107c41"></i>
+              <span class="skill-name">MS Excel</span>
+            </div>
+            <span class="skill-level-text">Advanced</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="90%"></div>
+          </div>
+        </div>
+
+        <!-- Graphic Designing -->
+        <div class="skill-card glass-card" data-category="creative" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-paint-brush skill-icon" style="color:#ec4899"></i>
+              <span class="skill-name">Graphic Designing</span>
+            </div>
+            <span class="skill-level-text">Creative</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="84%"></div>
+          </div>
+        </div>
+
+        <!-- Video Editing -->
+        <div class="skill-card glass-card" data-category="creative" data-tilt-card>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-video skill-icon" style="color:#f97316"></i>
+              <span class="skill-name">Video Editing</span>
+            </div>
+            <span class="skill-level-text">Creative</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" data-progress="80%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="hero-tag">
+          <span class="hero-tag-dash">—</span> PROJECTS
+        </div>
+        <h2 class="section-title">Featured Work & Academic Projects</h2>
+        <p class="section-desc">Explore projects highlighting web development, 3D interactive interfaces, and data
+          science.</p>
+      </div>
+
+      <!-- Projects Category Filter -->
+      <div class="skills-filter projects-filter">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="datascience">Data Science & Python</button>
+        <button class="filter-btn" data-filter="creative">Creative & Design</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card glass-card" data-category="web" data-tilt-card>
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-ecommerce.png" alt="Sales Analytics & E-Commerce Web App"
+              class="project-img">
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn view-project-btn" data-project="project-1" title="View Details"><i
+                  class="fas fa-eye"></i></a>
+              <a href="#" class="overlay-btn" title="GitHub Source Code"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">HTML5</span>
+              <span class="project-tag">CSS3</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+            <h3 class="project-title">Sales & E-Commerce Analytics App</h3>
+            <p class="project-desc">Feature-rich web application with product catalogs, real-time cart calculations, and
+              pastel analytics dashboards.</p>
+            <div class="project-footer">
+              <span class="project-link-text view-project-btn" data-project="project-1">
+                View Project Specs <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass-card" data-category="datascience" data-tilt-card>
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-datascience.png" alt="Data Science Predictive Dashboard"
+              class="project-img">
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn view-project-btn" data-project="project-2" title="View Details"><i
+                  class="fas fa-eye"></i></a>
+              <a href="#" class="overlay-btn" title="GitHub Source Code"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Data Science</span>
+              <span class="project-tag">MS Excel</span>
+            </div>
+            <h3 class="project-title">Data Science Predictive Insights</h3>
+            <p class="project-desc">Exploratory data analysis pipeline inspecting complex dataset trends, statistical
+              charts, and predictive modeling.</p>
+            <div class="project-footer">
+              <span class="project-link-text view-project-btn" data-project="project-2">
+                View Project Specs <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass-card" data-category="web" data-tilt-card>
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-task.png" alt="3D Web Development Interactive App" class="project-img">
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn view-project-btn" data-project="project-3" title="View Details"><i
+                  class="fas fa-eye"></i></a>
+              <a href="#" class="overlay-btn" title="GitHub Source Code"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Three.js</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">3D Animations</span>
+            </div>
+            <h3 class="project-title">3D Interactive Web Application</h3>
+            <p class="project-desc">Interactive 3D glassmorphic portfolio platform with WebGL dynamic particles and
+              real-time cursor tilt effects.</p>
+            <div class="project-footer">
+              <span class="project-link-text view-project-btn" data-project="project-3">
+                View Project Specs <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card glass-card" data-category="creative" data-tilt-card>
+          <div class="project-img-wrapper">
+            <img src="assets/images/project-creative.png" alt="Creative Graphic & Video Editing Showcase"
+              class="project-img">
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn view-project-btn" data-project="project-4" title="View Details"><i
+                  class="fas fa-eye"></i></a>
+              <a href="#" class="overlay-btn" title="Portfolio Gallery"><i class="fas fa-image"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Graphic Design</span>
+              <span class="project-tag">Video Editing</span>
+              <span class="project-tag">UI Mockup</span>
+            </div>
+            <h3 class="project-title">Media & Graphic Studio Showcase</h3>
+            <p class="project-desc">A curated portfolio of vector artwork, brand identities, promotional banners, and
+              motion video edits.</p>
+            <div class="project-footer">
+              <span class="project-link-text view-project-btn" data-project="project-4">
+                View Project Specs <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Journey Section -->
+  <section id="education" class="education">
+    <div class="container">
+      <div class="section-header">
+        <div class="hero-tag">
+          <span class="hero-tag-dash">—</span> EDUCATION
+        </div>
+        <h2 class="section-title">Education & Milestones</h2>
+        <p class="section-desc">My academic background in Computer Science Engineering & Data Science.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Milestone 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card" data-tilt-card>
+            <span class="timeline-badge">2023 - Present (Undergraduate)</span>
+            <h3 class="timeline-title">B.Tech - Computer Science Engineering</h3>
+            <div class="timeline-subtitle">Specialization in Data Science</div>
+            <p class="timeline-desc">
+              Focusing on core Computer Science subjects including Algorithms, Data Structures, Database Systems, Web
+              Technologies, and Data Analytics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card" data-tilt-card>
+            <span class="timeline-badge">Web Development Internship</span>
+            <h3 class="timeline-title">Oasis Infobyte (OIBSIP) Internship</h3>
+            <div class="timeline-subtitle">Frontend Web Developer Intern</div>
+            <p class="timeline-desc">
+              Constructed modern responsive web projects, portfolio interfaces, and interactive web tools emphasizing
+              clean CSS styling, semantic HTML, and JavaScript.
+            </p>
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card" data-tilt-card>
+            <span class="timeline-badge">Skill Certifications</span>
+            <h3 class="timeline-title">Python, Data Science & Web Certifications</h3>
+            <div class="timeline-subtitle">Self-Driven Learning & Projects</div>
+            <p class="timeline-desc">
+              Completed hands-on courses in Python programming, exploratory data analysis, Git workflow, and frontend UI
+              design principles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="hero-tag">
+          <span class="hero-tag-dash">—</span> CONTACT ME
+        </div>
+        <h2 class="section-title">Let's Connect & Build Together!</h2>
+        <p class="section-desc">Have a question, internship offer, or project idea? Feel free to reach out.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-cards">
+          <div class="contact-info-card glass-card" data-tilt-card>
+            <div class="info-icon"><i class="fas fa-user-graduate"></i></div>
+            <div class="info-details">
+              <h4>Full Name</h4>
+              <p>Chatla Vamshi</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card glass-card" data-tilt-card>
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="info-details">
+              <h4>Email Address</h4>
+              <p><a href="mailto:vamshichatla0612@gmail.com">vamshichatla0612@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-info-card glass-card" data-tilt-card>
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="info-details">
+              <h4>Location</h4>
+              <p>Telangana, India</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contact-form" class="contact-form glass-card" data-tilt-card>
+          <div class="form-group">
+            <label for="name"><i class="fas fa-user"></i> Your Name</label>
+            <input type="text" id="name" required placeholder="Enter your full name">
+          </div>
+
+          <div class="form-group">
+            <label for="email"><i class="fas fa-envelope"></i> Your Email</label>
+            <input type="email" id="email" required placeholder="Enter your email address">
+          </div>
+
+          <div class="form-group">
+            <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+            <input type="text" id="subject" required placeholder="Project / Internship Inquiry">
+          </div>
+
+          <div class="form-group">
+            <label for="message"><i class="fas fa-comment-dots"></i> Your Message</label>
+            <textarea id="message" rows="4" required placeholder="Write your message here..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary-gradient btn-full">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Popup for Resume & Projects -->
+  <div id="modal-backdrop" class="modal-backdrop">
+    <div class="modal-container glass-card">
+      <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <!-- Back To Top Floating Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-socials">
+        <a href="https://github.com/vamshichatla0612" target="_blank" class="social-link" title="GitHub"><i
+            class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/vamshi-chatla-1478a5352/" target="_blank" class="social-link" title="LinkedIn"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:vamshichatla0612@gmail.com" class="social-link" title="Email"><i
+            class="fas fa-envelope"></i></a>
+      </div>
+
+      <p style="font-weight:700; margin-bottom:0.4rem; color:var(--text-primary);">Chatla Vamshi • Creative Developer
+        Portfolio</p>
+      <p style="color:var(--text-secondary); font-size:0.9rem">
+        “Learning. Building. Creating. Growing.”
+      </p>
+      <p style="color:var(--text-muted); font-size:0.8rem; margin-top:1rem">
+        &copy; 2026 Chatla Vamshi. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Main Interactive JavaScript & 3D Three.js Logic -->
+  <script src="script.js"></script>
+</body>
+
+</html>
