@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>NOVA | Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a href="dashboard.html" class="dashboard-logo">
+
+            <span>N</span>
+
+            NOVA
+
+        </a>
+
+
+        <nav class="side-nav">
+
+            <a
+                href="#overview"
+                class="active">
+                🏠 Overview
+            </a>
+
+            <a href="#tasks">
+                ✅ My Tasks
+            </a>
+
+            <a href="#projects">
+                📁 Projects
+            </a>
+
+            <a href="#goals">
+                🎯 Goals
+            </a>
+
+            <a href="#calendar">
+                📅 Calendar
+            </a>
+
+            <a href="#statistics">
+                📊 Statistics
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button id="themeButton">
+                🌙 Dark Mode
+            </button>
+
+            <button id="logoutButton">
+                🚪 Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="dashboard-topbar">
+
+            <div>
+
+                <span class="dashboard-label">
+                    PRODUCTIVITY DASHBOARD
+                </span>
+
+            </div>
+
+
+            <div class="profile-area">
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div
+                    class="user-avatar"
+                    id="userAvatar">
+                    V
+                </div>
+
+                <div>
+
+                    <strong id="userName">
+                        User
+                    </strong>
+
+                    <small>
+                        Member
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div class="dashboard-container">
+
+
+            <!-- WELCOME -->
+
+            <section
+                id="overview"
+                class="welcome-section">
+
+                <div>
+
+                    <span class="welcome-badge">
+                        ✨ YOUR WORKSPACE
+                    </span>
+
+                    <h1>
+                        Welcome back,
+                        <span id="dashboardName">
+                            User
+                        </span>!
+                    </h1>
+
+                    <p>
+                        Let's make today productive.
+                        You are doing great. 🔥
+                    </p>
+
+                </div>
+
+
+                <div class="streak-box">
+
+                    <span>🔥</span>
+
+                    <div>
+
+                        <strong>
+                            7 Days
+                        </strong>
+
+                        <small>
+                            Current Streak
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+
+            <section class="dashboard-cards">
+
+
+                <div class="dashboard-card card-purple">
+
+                    <div class="stat-icon">
+                        📝
+                    </div>
+
+                    <div>
+
+                        <h3 id="totalTasks">
+                            0
+                        </h3>
+
+                        <p>
+                            Total Tasks
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card card-green">
+
+                    <div class="stat-icon">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <h3 id="completedTasks">
+                            0
+                        </h3>
+
+                        <p>
+                            Completed
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card card-orange">
+
+                    <div class="stat-icon">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            5
+                        </h3>
+
+                        <p>
+                            Active Goals
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card card-pink">
+
+                    <div class="stat-icon">
+                        📈
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            78%
+                        </h3>
+
+                        <p>
+                            Productivity
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- TASKS -->
+
+            <section
+                id="tasks"
+                class="dashboard-section">
+
+                <div class="section-title">
+
+                    <div>
+
+                        <span>
+                            ✦ PRODUCTIVITY
+                        </span>
+
+                        <h2>
+                            My Tasks
+                        </h2>
+
+                    </div>
+
+                    <div class="task-search">
+
+                        <input
+                            type="text"
+                            id="taskSearch"
+                            placeholder="🔍 Search tasks...">
+
+                    </div>
+
+                </div>
+
+
+                <form
+                    class="task-form"
+                    id="taskForm">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="What do you need to accomplish?"
+                        required>
+
+                    <select id="taskPriority">
+
+                        <option value="Low">
+                            Low Priority
+                        </option>
+
+                        <option value="Medium">
+                            Medium Priority
+                        </option>
+
+                        <option value="High">
+                            High Priority
+                        </option>
+
+                    </select>
+
+                    <button type="submit">
+                        + Add Task
+                    </button>
+
+                </form>
+
+
+                <div
+                    id="taskList"
+                    class="task-list">
+                </div>
+
+            </section>
+
+
+            <!-- PROJECTS -->
+
+            <section
+                id="projects"
+                class="dashboard-section">
+
+                <div class="section-title">
+
+                    <div>
+
+                        <span>
+                            ✦ ORGANIZE
+                        </span>
+
+                        <h2>
+                            Projects
+                        </h2>
+
+                    </div>
+
+                    <button class="small-button">
+                        + New Project
+                    </button>
+
+                </div>
+
+
+                <div class="project-grid">
+
+
+                    <div class="project-card">
+
+                        <div class="project-top">
+                            🎨
+                        </div>
+
+                        <h3>
+                            Website Design
+                        </h3>
+
+                        <p>
+                            Landing page project
+                        </p>
+
+                        <div class="progress">
+
+                            <div
+                                style="width: 75%">
+                            </div>
+
+                        </div>
+
+                        <small>
+                            75% completed
+                        </small>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-top">
+                            💻
+                        </div>
+
+                        <h3>
+                            Coding Practice
+                        </h3>
+
+                        <p>
+                            Improve programming skills
+                        </p>
+
+                        <div class="progress">
+
+                            <div
+                                style="width: 55%">
+                            </div>
+
+                        </div>
+
+                        <small>
+                            55% completed
+                        </small>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-top">
+                            📚
+                        </div>
+
+                        <h3>
+                            College Project
+                        </h3>
+
+                        <p>
+                            Semester project
+                        </p>
+
+                        <div class="progress">
+
+                            <div
+                                style="width: 40%">
+                            </div>
+
+                        </div>
+
+                        <small>
+                            40% completed
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- GOALS -->
+
+            <section
+                id="goals"
+                class="dashboard-section">
+
+                <div class="section-title">
+
+                    <div>
+
+                        <span>
+                            ✦ ACHIEVE MORE
+                        </span>
+
+                        <h2>
+                            My Goals
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="goal-grid">
+
+
+                    <div class="goal-card">
+
+                        <span>
+                            💻
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Learn Web Development
+                            </h3>
+
+                            <p>
+                                8 of 10 lessons completed
+                            </p>
+
+                            <div class="progress">
+
+                                <div
+                                    style="width: 80%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="goal-card">
+
+                        <span>
+                            📖
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Read Every Day
+                            </h3>
+
+                            <p>
+                                18 of 30 days completed
+                            </p>
+
+                            <div class="progress">
+
+                                <div
+                                    style="width: 60%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CALENDAR -->
+
+            <section
+                id="calendar"
+                class="dashboard-section">
+
+                <span>
+                    ✦ PLAN AHEAD
+                </span>
+
+                <h2>
+                    📅 Calendar
+                </h2>
+
+                <div class="calendar-box">
+
+                    <div>
+                        <strong>
+                            Today
+                        </strong>
+
+                        <p>
+                            Complete your priority tasks.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Tomorrow
+                        </strong>
+
+                        <p>
+                            Review your project progress.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Friday
+                        </strong>
+
+                        <p>
+                            Work on your college project.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+
+            <section
+                id="statistics"
+                class="dashboard-section">
+
+                <span>
+                    ✦ PERFORMANCE
+                </span>
+
+                <h2>
+                    📊 Productivity Statistics
+                </h2>
+
+                <div class="chart">
+
+                    <div style="height: 40%">
+                        <span>Mon</span>
+                    </div>
+
+                    <div style="height: 65%">
+                        <span>Tue</span>
+                    </div>
+
+                    <div style="height: 50%">
+                        <span>Wed</span>
+                    </div>
+
+                    <div style="height: 80%">
+                        <span>Thu</span>
+                    </div>
+
+                    <div style="height: 70%">
+                        <span>Fri</span>
+                    </div>
+
+                    <div style="height: 90%">
+                        <span>Sat</span>
+                    </div>
+
+                    <div style="height: 60%">
+                        <span>Sun</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> 90b9ec7c9d9749b76a7a690648dd47e948cd9a33

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOVA | Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="auth-page">
+
+        <div class="auth-container">
+
+            <a href="index.html" class="auth-logo">
+                <span>N</span> NOVA
+            </a>
+
+            <h1>Welcome Back 👋</h1>
+
+            <p class="auth-subtitle">
+                Login to continue your productivity journey.
+            </p>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-options">
+
+                    <label>
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+
+                    <a href="#">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="auth-button">
+                    Login →
+                </button>
+
+                <p
+                    id="loginMessage"
+                    class="auth-message">
+                </p>
+
+            </form>
+
+            <div class="auth-divider">
+                <span>OR</span>
+            </div>
+
+            <p class="auth-footer">
+
+                Don't have an account?
+
+                <a href="signup.html">
+                    Create Account
+                </a>
+
+            </p>
+
+            <p class="auth-footer">
+
+                <a href="index.html">
+                    ← Back to NOVA
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
